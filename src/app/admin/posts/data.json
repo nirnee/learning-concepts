@@ -1,0 +1,46 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "src": "https://mdbootstrap.com/img/new/avatars/8.jpg",
+            "title": "Software engineer",
+            "content": "It Department",
+            "author": "John Doe",
+            "email": "john.doe@gmail.com",
+            "comments": [
+                {
+                    "comId": 1,
+                    "comment": "hi author"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "src": "https://mdbootstrap.com/img/new/avatars/6.jpg",
+            "title": "Consultant",
+            "content": "Finance",
+            "author": "Alex Ray",
+            "email": "alex.ray@gmail.com",
+            "comments": [
+                {
+                    "comId": 1,
+                    "comment": "hi author"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "src": "https://mdbootstrap.com/img/new/avatars/7.jpg",
+            "title": "Designer",
+            "content": "UI/UX",
+            "author": "Kate Hunington",
+            "email": "kate.hunington@gmail.com",
+            "comments": [
+                {
+                    "comId": 1,
+                    "comment": "hi author"
+                }
+            ]
+        }
+    ]
+}
