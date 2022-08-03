@@ -29,8 +29,8 @@
                                         <p class="fw-normal mb-1">{{comment.comment}}</p>
                                     </td>                                
                                     <td>
-                                        <button type="button"(click)="Edit(comment)" class="btn btn-link btn-sm btn-rounded">
-                                            Edit
+                                        <button type="button"(click)="edit(comment)" matTooltip="Edit comment" class="btn btn-link btn-sm btn-rounded">
+                                            <img src="/assets/images/edit-img.png" class="w-30">
                                         </button>
                                     </td>
                                 </tr>
@@ -43,10 +43,10 @@
             </div>
              <div class="modal-footer d-flex justify-content-center border-top-0 py-4 row p-4">
                     <div>
-                        <button type="button" (click)="Add()" class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-start btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                        <button type="button" (click)="add()" class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-start btn btn-success btn-block btn-lg gradient-custom-4 text-body">
                             Add new comment
                         </button>
-                        <button type="button" (click)="Post()" class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-end btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                        <button type="button" (click)="post()" class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-end btn btn-success btn-block btn-lg gradient-custom-4 text-body">
                             Posts
                         </button>
                     </div>

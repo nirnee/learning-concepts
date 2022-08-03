@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppRoutingModule } from '../app-routing.module';
 import { CommentsComponent } from './comments/comments.component';
 import { CreateCommentsComponent } from './comments/create-comments/create-comments.component';
@@ -9,7 +10,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreatePostComponent } from './posts/create/create.component';
 import { PostsComponent } from './posts/posts.component';
 import { UpdatePostsComponent } from './posts/update-posts/update-posts.component';
-
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -25,6 +25,7 @@ import { UpdatePostsComponent } from './posts/update-posts/update-posts.componen
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    MatTooltipModule
   ],
   exports: [
     DashboardComponent,

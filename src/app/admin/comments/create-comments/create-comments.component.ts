@@ -56,4 +56,9 @@ export class CreateCommentsComponent implements OnInit {
     }
   }
 
+  //go back function
+  goBack(){
+    this.router.navigateByUrl(this.commentsUrl);
+  }
+
 }

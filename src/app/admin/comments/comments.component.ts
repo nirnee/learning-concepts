@@ -37,17 +37,17 @@ export class CommentsComponent implements OnInit {
   }
   
   //edit comment
-  Edit(data: any){
+  edit(data: any){
     this.router.navigateByUrl('comments/update/:'+this.empId+'/:'+data.comId)
   }
   
   //add comment
-  Add(){
+  add(){
     this.router.navigateByUrl('comments/:'+this.empId+'/create')
   }
 
   //redirect to post
-  Post(){
+  post(){
     this.router.navigateByUrl('posts');
   }
 }

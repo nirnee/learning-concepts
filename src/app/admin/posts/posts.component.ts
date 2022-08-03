@@ -24,17 +24,17 @@ export class PostsComponent implements OnInit {
   }
 
   //redirect to edit post
-  Edit(data: any){
+  edit(data: any){
     this.router.navigateByUrl('/posts/update/'+data.id)
   }
   
   //redirect to comments
-  Comment(data:any){
+  comment(data:any){
     this.router.navigateByUrl('/comments/:'+data.id);
   }
 
   //redirect to add post
-  Add(){
+  cdd(){
     this.router.navigateByUrl('posts/create');
   }
 }

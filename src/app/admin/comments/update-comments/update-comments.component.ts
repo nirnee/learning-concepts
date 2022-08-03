@@ -72,5 +72,9 @@ export class UpdateCommentsComponent implements OnInit {
     }
   }
 
+  //go back function
+  goBack(){
+    this.router.navigateByUrl(this.commentsUrl);
+  }
 }
 
