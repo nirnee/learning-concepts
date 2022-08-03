@@ -50,7 +50,6 @@ typings/
 # Optional npm cache directory
 .npm
 .angular
-docs
 
 # Optional eslint cache
 .eslintcache
