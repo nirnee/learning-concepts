@@ -34,7 +34,7 @@ export class PostsComponent implements OnInit {
   }
 
   //redirect to add post
-  cdd(){
+  add(){
     this.router.navigateByUrl('posts/create');
   }
 }
