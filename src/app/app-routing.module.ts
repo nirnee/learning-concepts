@@ -19,6 +19,10 @@ const routes: Routes = [
 		component: LoginComponent
   },
   {
+    path: 'learning-concepts',
+		component: LoginComponent
+  },
+  {
     path: 'login',
 		component: LoginComponent
   },
