@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import employees from '../data.json';
 
@@ -12,7 +12,6 @@ export class UpdatePostsComponent implements OnInit {
 
   //component to render update posts 
   constructor(
-    private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute
   ) { 

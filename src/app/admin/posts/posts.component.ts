@@ -37,4 +37,9 @@ export class PostsComponent implements OnInit {
   add(){
     this.router.navigateByUrl('posts/create');
   }
+
+  //delete post function
+  delete(data: any){
+    this.router.navigateByUrl('posts/delete/:'+data.id);
+  }
 }

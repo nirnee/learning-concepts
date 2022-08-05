@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreatePostComponent } from './posts/create/create.component';
 import { PostsComponent } from './posts/posts.component';
 import { UpdatePostsComponent } from './posts/update-posts/update-posts.component';
+
 @NgModule({
   declarations: [
     DashboardComponent,

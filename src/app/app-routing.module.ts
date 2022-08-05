@@ -12,6 +12,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { AboutComponent } from './public/about/about.component';
 import { ContactComponent } from './public/contact/contact.component';
 import { PageNotFoundComponent } from './public/page-not-found/page-not-found.component';
+import { DeleteComponent } from './shared/components/delete/delete.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,14 @@ const routes: Routes = [
   {
     path:'posts/update/:id',
     component: UpdatePostsComponent
+  },
+  {
+    path:'posts/delete/:postId',
+    component: DeleteComponent
+  },
+  {
+    path:'comments/delete/:postId/:commentId',
+    component: DeleteComponent
   },
   {
     path:'posts/create',

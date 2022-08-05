@@ -50,4 +50,9 @@ export class CommentsComponent implements OnInit {
   post(){
     this.router.navigateByUrl('posts');
   }
+
+  //delete function
+  delete(data:any){
+    this.router.navigateByUrl('comments/delete/:'+this.empId+'/:'+data.comId)
+  }
 }
