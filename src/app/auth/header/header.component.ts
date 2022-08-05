@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  
+  date:Date = new Date(); 
 
   constructor(private router: Router) { 
-    //comment here
+     setInterval(() => {
+      this.date = new Date();
+    }, 1000)
   }
 
   user: any;

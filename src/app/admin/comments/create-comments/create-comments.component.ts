@@ -35,18 +35,18 @@ export class CreateCommentsComponent implements OnInit {
     this.routeSub = this.route.params.subscribe(params => {
       this.empId = parseInt(params['postId'].substring(1));
     });
-    this.data = employees.employees.filter(a=>a.id == this.empId)[0];
+    this.data = employees.employees.filter(post=>post.id == this.empId)[0];
     this.commentsUrl= 'comments/:'+this.empId;
   }
   
   //create new comment function
   createComment(data: any){
     if(this.createCommentsForm.valid){      
-      employees.employees.map(a=> {
-        if(a.id==this.empId)
+      employees.employees.map(post=> {
+        if(post.id==this.empId)
         { 
-         let id = a.comments.length+1
-         a.comments.push({comId:id, comment:data.comment})     
+         let id = post.comments[post.comments.length-1].comId+1;
+         post.comments.push({comId:id, comment:data.comment})     
         }
       });    
       this.router.navigateByUrl(this.commentsUrl);

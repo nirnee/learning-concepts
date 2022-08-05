@@ -33,19 +33,19 @@ export class UpdateCommentsComponent implements OnInit {
       this.empId = parseInt(params['postId'].substring(1));
       this.commentId = parseInt(params['commentId'].substring(1));
     });
-    this.data = employees.employees.filter(a=>a.id == this.empId)[0];
+    this.data = employees.employees.filter(post=>post.id == this.empId)[0];
     this.commentsUrl= 'comments/:'+this.empId;
     this.getComment();
   }
   
   //get comment function
   getComment() {
-    employees.employees.map(a=> {
-        if(a.id==this.empId)
+    employees.employees.map(post=> {
+        if(post.id==this.empId)
         {
-          a['comments'].map(b=>{
-            if(b.comId == this.commentId){
-              this.updateCommentsForm.controls['comment'].setValue(b.comment);
+          post['comments'].map(Comment=>{
+            if(Comment.comId == this.commentId){
+              this.updateCommentsForm.controls['comment'].setValue(Comment.comment);
             }
           })
         }
@@ -55,12 +55,12 @@ export class UpdateCommentsComponent implements OnInit {
   //update comment function
   updateComment(data: any){
     if(this.updateCommentsForm.valid){
-      employees.employees.map(a=> {
-        if(a.id==this.empId)
+      employees.employees.map(post=> {
+        if(post.id==this.empId)
         {
-          a['comments'].map(b=>{
-            if(b.comId == this.commentId){
-              b.comment = data.comment;
+          post['comments'].map(comment=>{
+            if(comment.comId == this.commentId){
+              comment.comment = data.comment;
             }
           })
         }

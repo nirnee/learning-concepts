@@ -40,16 +40,16 @@ export class DeleteComponent implements OnInit {
   delete(){
     if(!this.commentId) {
       let result = [employees.employees][0];
-      let arr = result.filter(a=>a.id!=this.empId);
+      let arr = result.filter(post=>post.id!=this.empId);
       employees.employees = JSON.parse(JSON.stringify(arr));
       this.router.navigateByUrl('/posts');
     } else {
       let arr:any = [];
-      employees.employees.map(a=>{
-        if(a.id == this.empId) {
-         let result = [a.comments][0];
-         arr = result.filter(a=>a.comId!=this.commentId);
-         a.comments = arr;
+      employees.employees.map(post=>{
+        if(post.id == this.empId) {
+         let result = [post.comments][0];
+         arr = result.filter(post=>post.comId!=this.commentId);
+         post.comments = arr;
         }
       });
       this.router.navigateByUrl('/comments/:'+this.empId);

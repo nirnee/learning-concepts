@@ -17,8 +17,8 @@ export class PostsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    employees.employees.map((a:any)=>{
-      a.image= a.src.length>0? a.src : './assets/images/user.jpeg';
+    employees.employees.map((post:any)=>{
+      post.image= post.src.length>0? post.src : './assets/images/user.jpeg';
     })
     this.dataSource = employees;
   }

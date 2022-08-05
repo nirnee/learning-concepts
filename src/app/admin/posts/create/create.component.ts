@@ -34,7 +34,7 @@ export class CreatePostComponent implements OnInit {
   //create posts function
   createPost(data: any){
     if(this.createPostsForm.valid){
-      let id= employees.employees.length+1;
+      let id= employees.employees[employees.employees.length-1].id+1;
       employees.employees.push({id:id, src:"", title:data.title, author:data.author, content:data.content, email:data.email, comments: []});
       this.router.navigateByUrl('/posts');
     } else {

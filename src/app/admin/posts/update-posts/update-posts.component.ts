@@ -39,26 +39,26 @@ export class UpdatePostsComponent implements OnInit {
   
   //get post values
   getPost() {
-    employees.employees.map(a=>{
-      if(a.id==this.empId)
+    employees.employees.map(post=>{
+      if(post.id==this.empId)
         {
-          this.updatePostsForm.controls['author'].setValue(a.author);
-          this.updatePostsForm.controls['content'].setValue(a.content);
-          this.updatePostsForm.controls['email'].setValue(a.email);
-          this.updatePostsForm.controls['title'].setValue(a.title);
+          this.updatePostsForm.controls['author'].setValue(post.author);
+          this.updatePostsForm.controls['content'].setValue(post.content);
+          this.updatePostsForm.controls['email'].setValue(post.email);
+          this.updatePostsForm.controls['title'].setValue(post.title);
         }
     })
   }
   //update post
   updatePost(data: any){
     if(this.updatePostsForm.valid){
-      employees.employees.map(a=> {
-        if(a.id==this.empId)
+      employees.employees.map(post=> {
+        if(post.id==this.empId)
         {
-          a.author = data.author;
-          a.content = data.content,
-          a.email = data.email;
-          a.title = data.title;          
+          post.author = data.author;
+          post.content = data.content,
+          post.email = data.email;
+          post.title = data.title;          
         }
       });      
       this.router.navigateByUrl('/posts');
