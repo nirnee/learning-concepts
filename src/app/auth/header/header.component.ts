@@ -21,7 +21,8 @@ export class HeaderComponent implements OnInit {
 
   //redirect to other pages
   redirect(page: any){
-    this.router.navigateByUrl(page);
+    console.log(page);
+    this.router.navigateByUrl('/',page);
   }
 
 }
