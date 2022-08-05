@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 //component to render header 
 @Component({
@@ -8,13 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { 
+  constructor(private router: Router) { 
     //comment here
   }
 
   user: any;
+  
   ngOnInit(): void {
      this.user = localStorage.getItem("userName");
+  }
+
+  //redirect to other pages
+  redirect(page: any){
+    this.router.navigateByUrl(page);
   }
 
 }

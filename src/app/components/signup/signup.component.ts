@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
 //component to render signup page
@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   constructor(
-    private formBuilder: FormBuilder,
     private router: Router
   ) { 
     //comment here
@@ -45,6 +44,11 @@ export class SignupComponent implements OnInit {
       //if form is not valid show error message
       this.validComment = false;
     }
+  }
+
+   //login
+  login(){
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -39,4 +39,9 @@ export class LoginComponent implements OnInit {
       this.validComment = false;
     }
   }
+
+  //signup
+  signup(){
+    this.router.navigateByUrl('/signup');
+  }
 }

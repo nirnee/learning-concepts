@@ -7,31 +7,31 @@
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <div class="card" style="border-radius: 15px;">
                     <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                    <h2 class="text-uppercase text-center ">Create an account</h2>
 
                     <form [formGroup]="signUpForm">
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline ">
                         <input type="text" id="form3Example1cg" required formControlName= 'name' class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example1cg">Your Name</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline ">
                         <input type="email" id="form3Example3cg" required formControlName= 'email' class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example3cg">Your Email</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline ">
                         <input type="password" id="form3Example4cg" required formControlName= 'password' class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example4cg">Password</label>
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline ">
                         <input type="password" id="form3Example4cdg" required formControlName= 'cpassword' class="form-control form-control-lg" />
                         <label class="form-label" for="form3Example4cdg">Repeat your password</label>
                         </div>
 
-                        <div class="form-check d-flex justify-content-center mb-5" *ngIf="passwordNotMatch">                        
+                        <div class="form-check d-flex justify-content-center " *ngIf="passwordNotMatch">                        
                         <label class="form-check-label" style="color: red;">
                             Password doesn't match.
                         </label>
@@ -44,7 +44,7 @@
                             class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                         </div>
 
-                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a [routerLink]="['/login']"
+                        <p class="text-center text-muted mt-5 ">Have already an account? <a (click)="login()"
                             class="fw-bold text-body"><u>Login here</u></a></p>
 
                     </form>

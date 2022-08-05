@@ -1,28 +1,6 @@
-body .header-cls {
-    display: none !important;
-}
-.login-container{
-    margin: 10vh;
-    border: solid 1px blue;
-    height: 750px;
-    width: 500px;
-    margin-left: 34%;
-   
-    .login-div {
-        left      : 50%;
-        top       : 50%;
-        position  : absolute;
-        transform : translate(-50%, -50%); 
-        .login-heading {
-            position: absolute;
-            color: blue;
-        }
-        .login-form {
-            left: 50%;
-            margin-top: 100px;
-            .login-submit{
-               margin-left: 130px;
-            }
-        }
-    }
+.ol-12,
+.col-md-9,
+.col-lg-7,
+.col-xl-6 {
+    width: 40%;
 }
