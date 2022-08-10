@@ -20,10 +20,10 @@ export class UpdatePostsComponent implements OnInit {
   
   //update posts form
   updatePostsForm = new FormGroup({
-    email: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
-    title: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(6)])),
-    content: new FormControl(),
-    author: new FormControl()
+    email: new FormControl(''),
+    title: new FormControl(''),
+    content: new FormControl(''),
+    author: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(6)]))
   });
 
   routeSub: any;
