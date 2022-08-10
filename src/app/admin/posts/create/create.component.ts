@@ -35,7 +35,7 @@ export class CreatePostComponent implements OnInit {
   createPost(data: any){
     if(this.createPostsForm.valid){
       let id= employees.employees[employees.employees.length-1].id+1;
-      employees.employees.push({id:id, src:"", title:data.title, author:data.author, content:data.content, email:data.email, comments: []});
+      employees.employees.push({id:id, src:"", title:data.title.trim(), author:data.author.trim(), content:data.content.trim(), email:data.email.trim(), comments: []});
       this.router.navigateByUrl('/posts');
     } else {
       //if form is not valid show error message

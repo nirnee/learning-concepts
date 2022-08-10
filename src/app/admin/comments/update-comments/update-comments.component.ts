@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import employees from '../../posts/data.json';
 
@@ -18,7 +18,7 @@ export class UpdateCommentsComponent implements OnInit {
 
   //update comments form
   updateCommentsForm = new FormGroup({
-    comment: new FormControl()
+    comment: new FormControl('',Validators.compose([Validators.required, Validators.minLength(2)]))
   });
 
   routeSub: any;
@@ -54,7 +54,7 @@ export class UpdateCommentsComponent implements OnInit {
 
   //update comment function
   updateComment(data: any){
-    if(this.updateCommentsForm.valid){
+    if(this.updateCommentsForm.valid && data.comment.trim().length>1){
       employees.employees.map(post=> {
         if(post.id==this.empId)
         {

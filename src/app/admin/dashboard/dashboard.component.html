@@ -1,13 +1,14 @@
 <div>
-    <section class="vh-100 bg-image"
-    style="background-image: url('./assets/images/bg-img.webp');">
+    <section class="vh-100 bg-image" style="background-image: url('./assets/images/bg-img.webp');">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <nav class="menu">
                     <a [routerLink]="['/posts']" style="color: black;">Posts</a>
                 </nav>
+                <label>Number</label>&nbsp;
+                <input type="number" [(ngModel)]="num" /> <br>
+                <label>Square of above number <span>{{num | square}}</span> </label>
             </div>
         </div>
     </section>
 </div>
-

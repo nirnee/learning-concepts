@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import employees from '../data.json';
 
@@ -20,8 +20,8 @@ export class UpdatePostsComponent implements OnInit {
   
   //update posts form
   updatePostsForm = new FormGroup({
-    email: new FormControl(),
-    title: new FormControl(),
+    email: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
+    title: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(6)])),
     content: new FormControl(),
     author: new FormControl()
   });
@@ -46,19 +46,20 @@ export class UpdatePostsComponent implements OnInit {
           this.updatePostsForm.controls['content'].setValue(post.content);
           this.updatePostsForm.controls['email'].setValue(post.email);
           this.updatePostsForm.controls['title'].setValue(post.title);
-        }
+        }        
     })
   }
+  
   //update post
   updatePost(data: any){
     if(this.updatePostsForm.valid){
       employees.employees.map(post=> {
         if(post.id==this.empId)
         {
-          post.author = data.author;
-          post.content = data.content,
-          post.email = data.email;
-          post.title = data.title;          
+          post.author = data.author.trim();
+          post.content = data.content.trim();
+          post.email = data.email.trim();
+          post.title = data.title.trim();          
         }
       });      
       this.router.navigateByUrl('/posts');

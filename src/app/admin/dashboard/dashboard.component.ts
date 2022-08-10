@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
+  num: number = 1;
   constructor() { 
     //comment here
   }

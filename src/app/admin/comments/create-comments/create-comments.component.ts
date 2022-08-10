@@ -41,7 +41,7 @@ export class CreateCommentsComponent implements OnInit {
   
   //create new comment function
   createComment(data: any){
-    if(this.createCommentsForm.valid){      
+    if(this.createCommentsForm.valid && data.comment.trim().length>1){      
       employees.employees.map(post=> {
         if(post.id==this.empId)
         { 
