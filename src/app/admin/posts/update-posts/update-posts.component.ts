@@ -40,13 +40,13 @@ export class UpdatePostsComponent implements OnInit {
   //get post values
   getPost() {
     employees.employees.map(post=>{
-      if(post.id==this.empId)
-        {
+      if(post.id==this.empId) {
           this.updatePostsForm.controls['author'].setValue(post.author);
           this.updatePostsForm.controls['content'].setValue(post.content);
           this.updatePostsForm.controls['email'].setValue(post.email);
           this.updatePostsForm.controls['title'].setValue(post.title);
-        }        
+        }   
+        return;      
     })
   }
   

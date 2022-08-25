@@ -20,13 +20,14 @@ export class HeaderComponent implements OnInit {
   user: any;
   
   ngOnInit(): void {
-     this.user = localStorage.getItem("userName");
+     let userData: any = localStorage.getItem("userData");
+     console.log(typeof(userData))
+     this.user = JSON.parse(userData)?.['name'];
   }
 
-  //redirect to other pages
-  redirect(page: any){
-    console.log(page);
-    this.router.navigateByUrl('/',page);
+  //logout function
+  logout(){
+    this.router.navigateByUrl('/');
   }
 
 }

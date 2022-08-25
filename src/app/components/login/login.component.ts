@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
 import { Router } from '@angular/router';
+import { LoginService } from './login.service';
 
 //component to render login page
 @Component({
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
  
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router) {
+    private router: Router,
+    private loginService: LoginService) {
   }
 
   //lofin form
@@ -31,17 +33,18 @@ export class LoginComponent implements OnInit {
   //submit
   submit(value:any){
     if(this.loginForm.valid){
-      this.isLoggedIn = true;
-      localStorage.setItem("userName", this.loginForm.controls['name'].value);
-      this.router.navigateByUrl('/dashboard');
+      let data = {
+        username: this.loginForm.controls['name'].value,
+        password: this.loginForm.controls['password'].value
+      }
+      this.loginService.userLogin(data);
+      let isUserLoggedIn = localStorage.getItem('userData');     
+      if(isUserLoggedIn != null) {
+        this.router.navigateByUrl('/dashboard');
+      }
     } else {
       //if form is not valid show error message
       this.validComment = false;
     }
-  }
-
-  //signup
-  signup(){
-    this.router.navigateByUrl('/signup');
   }
 }

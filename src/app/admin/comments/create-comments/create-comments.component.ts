@@ -46,7 +46,8 @@ export class CreateCommentsComponent implements OnInit {
         if(post.id==this.empId)
         { 
          let id = post.comments.length > 0 ? post.comments[post.comments.length-1].comId+1: 1;
-         post.comments.push({comId:id, comment:data.comment})     
+         post.comments.push({comId:id, comment:data.comment});
+         return;    
         }
       });    
       this.router.navigateByUrl(this.commentsUrl);

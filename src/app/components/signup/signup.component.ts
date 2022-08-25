@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SignupService } from './signup.service';
 
 //component to render signup page
 @Component({
@@ -11,7 +12,9 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder,
+    private signupService: SignupService
   ) { 
     //comment here
   }
@@ -20,7 +23,7 @@ export class SignupComponent implements OnInit {
   validComment: boolean= true;
 
   //signup form
-  signUpForm = new FormGroup({
+  signUpForm = this.fb.group({
     name: new FormControl(),
     email: new FormControl(),
     password: new FormControl(),
@@ -36,7 +39,14 @@ export class SignupComponent implements OnInit {
     this.passwordNotMatch = false;
     if(this.signUpForm.valid){
       if(this.signUpForm.controls['password'].value == this.signUpForm.controls['cpassword'].value) {
-        this.router.navigateByUrl('/login')
+        let data = {
+          name: this.signUpForm.controls['name'].value,
+          email: this.signUpForm.controls['email'].value,
+          password: this.signUpForm.controls['password'].value,
+          cpassword: this.signUpForm.controls['cpassword'].value
+        }
+      this.signupService.userSignup(data);
+        this.router.navigateByUrl('/login');
       } else {
         this.passwordNotMatch = true;
       }
@@ -44,11 +54,6 @@ export class SignupComponent implements OnInit {
       //if form is not valid show error message
       this.validComment = false;
     }
-  }
-
-   //login
-  login(){
-    this.router.navigateByUrl('/login');
   }
 
 }

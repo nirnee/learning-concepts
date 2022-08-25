@@ -27,8 +27,11 @@
           <img class="user-icon" src="./assets/images/user.jpeg">
           {{user}}
         </div>
-        <div class="head-time">
+        <div class="head-time ml-10">
           {{date | date: "hh:mm:ss a"}}
+        </div>
+        <div class="ml-10">
+          <img class="user-icon" src="./assets/images/logout.png" (click)="logout()">
         </div>
       </div>
       <!-- Right elements -->

@@ -3,11 +3,39 @@
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
                 <div class="menu">
-                    <h2>About works!</h2>
-                    <p>Coming soon...</p>
+                    <h2>FAQ</h2>
+                    <div class="d-flex py-4 row" *ngIf="!isLodaing">
+                        <div>
+                            <button mat-button (click)="accordion.openAll()"
+                                class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-start btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                                Expand All
+                            </button>
+                            <button mat-button (click)="accordion.closeAll()"
+                                class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-end btn btn-success btn-block btn-lg gradient-custom-4 text-body">
+                                Collapse All
+                            </button>
+                        </div>
+                    </div>
+                    <!-- #docregion multi -->
+                    <mat-accordion class="example-headers-align" multi *ngIf="!isLodaing">
+                        <!-- #enddocregion multi -->
+                        <ng-container *ngFor="let faq of faqs">
+                            <mat-expansion-panel class="bg-info text-dark" #faq>
+                                <mat-expansion-panel-header (click)="expandPanel(faq, $event)">
+                                    <div class="my-panel">
+                                        <h3>{{faq.question}}</h3>
+                                    </div>
+                                </mat-expansion-panel-header>
+
+                                <div>{{faq.answer}}</div>
+                            </mat-expansion-panel>
+                        </ng-container>
+                    </mat-accordion>
+                    <div *ngIf="isLodaing">
+                        {{message}}
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </div>
-

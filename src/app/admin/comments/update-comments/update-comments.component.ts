@@ -63,6 +63,7 @@ export class UpdateCommentsComponent implements OnInit {
               comment.comment = data.comment;
             }
           })
+          return; 
         }
       });
        this.router.navigateByUrl(this.commentsUrl);

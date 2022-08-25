@@ -1,58 +1,61 @@
 <div>
-    <section class="vh-100 bg-image"
-    style="background-image: url('./assets/images/bg-img.webp');">
+    <section class="vh-100 bg-image" style="background-image: url('./assets/images/bg-img.webp');">
         <div class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <div class="card" style="border-radius: 15px;">
-                    <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center ">Create an account</h2>
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center ">Create an account</h2>
 
-                    <form [formGroup]="signUpForm">
+                                <form [formGroup]="signUpForm">
 
-                        <div class="form-outline ">
-                        <input type="text" id="form3Example1cg" required formControlName= 'name' class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example1cg">Your Name</label>
+                                    <div class="form-outline ">
+                                        <input type="text" id="form3Example1cg" required formControlName='name'
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" for="form3Example1cg">Your Name</label>
+                                    </div>
+
+                                    <div class="form-outline ">
+                                        <input type="email" id="form3Example3cg" required formControlName='email'
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" for="form3Example3cg">Your Email</label>
+                                    </div>
+
+                                    <div class="form-outline ">
+                                        <input type="password" id="form3Example4cg" required formControlName='password'
+                                            class="form-control form-control-lg" />
+                                        <label class="form-label" for="form3Example4cg">Password</label>
+                                    </div>
+
+                                    <div class="form-outline ">
+                                        <input type="password" id="form3Example4cdg" required
+                                            formControlName='cpassword' class="form-control form-control-lg" />
+                                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                                    </div>
+
+                                    <div class="form-check d-flex justify-content-center " *ngIf="passwordNotMatch">
+                                        <label class="form-check-label" style="color: red;">
+                                            Password doesn't match.
+                                        </label>
+                                    </div>
+
+                                    <span *ngIf="!validComment" style="color: red;">Please check your entries.</span>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" (click)="submit()"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-5 ">Have already an account? <a
+                                            routerLink="/login" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                                </form>
+
+                            </div>
                         </div>
-
-                        <div class="form-outline ">
-                        <input type="email" id="form3Example3cg" required formControlName= 'email' class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example3cg">Your Email</label>
-                        </div>
-
-                        <div class="form-outline ">
-                        <input type="password" id="form3Example4cg" required formControlName= 'password' class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example4cg">Password</label>
-                        </div>
-
-                        <div class="form-outline ">
-                        <input type="password" id="form3Example4cdg" required formControlName= 'cpassword' class="form-control form-control-lg" />
-                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                        </div>
-
-                        <div class="form-check d-flex justify-content-center " *ngIf="passwordNotMatch">                        
-                        <label class="form-check-label" style="color: red;">
-                            Password doesn't match.
-                        </label>
-                        </div>
-
-                        <span *ngIf="!validComment" style="color: red;">Please check your entries.</span>
-
-                        <div class="d-flex justify-content-center">
-                        <button type="button" (click)="submit()"
-                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                        </div>
-
-                        <p class="text-center text-muted mt-5 ">Have already an account? <a (click)="login()"
-                            class="fw-bold text-body"><u>Login here</u></a></p>
-
-                    </form>
-
                     </div>
                 </div>
-                </div>
-            </div>
             </div>
         </div>
     </section>
