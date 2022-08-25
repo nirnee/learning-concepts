@@ -10,11 +10,6 @@ import employees from '../../posts/data.json';
   styleUrls: ['./update-comments.component.scss']
 })
 export class UpdateCommentsComponent implements OnInit {
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private route: ActivatedRoute
-  ) { }
 
   //update comments form
   updateCommentsForm = new FormGroup({
@@ -27,6 +22,14 @@ export class UpdateCommentsComponent implements OnInit {
   commentId: any;
   commentsUrl: any;
   validComment: boolean= true;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { 
+    //comment here
+  }
   
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {

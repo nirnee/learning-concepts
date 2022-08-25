@@ -10,13 +10,6 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
- 
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private loginService: LoginService) {
-  }
-
   //lofin form
   loginForm = new FormGroup({
     name: new FormControl(),
@@ -25,6 +18,13 @@ export class LoginComponent implements OnInit {
 
   isLoggedIn : boolean = false;
   validComment: boolean= true;
+ 
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private loginService: LoginService) {
+      //comment here
+  }
 
   ngOnInit(): void {
     //comment here

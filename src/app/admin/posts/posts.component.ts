@@ -10,6 +10,7 @@ import employees from './data.json';
 })
 export class PostsComponent implements OnInit {
 
+  //define variables
   dataSource:any = employees;
 
   constructor(private router: Router) {

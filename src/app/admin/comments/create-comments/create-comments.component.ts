@@ -10,15 +10,6 @@ import employees from '../../posts/data.json';
   styleUrls: ['./create-comments.component.scss']
 })
 export class CreateCommentsComponent implements OnInit {
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {
-    //comment here
-   }
-
   //create
   createCommentsForm = new FormGroup({
     comment: new FormControl()
@@ -30,6 +21,14 @@ export class CreateCommentsComponent implements OnInit {
   comments: any;
   commentsUrl: any;
   validComment: boolean= true;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
+    //comment here
+   }
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {

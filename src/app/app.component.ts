@@ -7,6 +7,7 @@ import { NavigationStart, Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  //define variables
   title = 'assesment';
   showHead: boolean = true;
 

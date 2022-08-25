@@ -10,12 +10,6 @@ import employees from '../data.json';
   styleUrls: ['./create.component.scss']
 })
 export class CreatePostComponent implements OnInit {
-  constructor(
-    private formBuilder: FormBuilder,
-    private router: Router
-  ) { 
-    //comment here
-  }
 
   //create posts form
   createPostsForm = new FormGroup({
@@ -24,8 +18,14 @@ export class CreatePostComponent implements OnInit {
     content: new FormControl(),
     author: new FormControl()
   });
-
   validComment: boolean= true;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router
+  ) { 
+    //comment here
+  }
 
   ngOnInit(): void {
     //comment here
@@ -42,5 +42,4 @@ export class CreatePostComponent implements OnInit {
       this.validComment = false;
     }
   }
-
 }

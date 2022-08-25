@@ -11,6 +11,9 @@ import { SignupService } from './signup.service';
 })
 export class SignupComponent implements OnInit {
 
+  passwordNotMatch: boolean = false;
+  validComment: boolean= true;
+
   constructor(
     private router: Router,
     private fb: FormBuilder,
@@ -18,9 +21,6 @@ export class SignupComponent implements OnInit {
   ) { 
     //comment here
   }
-
-  passwordNotMatch: boolean = false;
-  validComment: boolean= true;
 
   //signup form
   signUpForm = this.fb.group({

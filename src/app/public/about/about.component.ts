@@ -11,9 +11,12 @@ import { AboutService } from './about.service';
 })
 export class AboutComponent implements OnInit {
   @ViewChild(MatAccordion) accordion: MatAccordion;
+
+  //define variables
   faqs: any;
   isLodaing: boolean = true;
   message: string = 'Loading...';
+
   constructor(
     private aboutService: AboutService,
     private router: Router
@@ -24,6 +27,8 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
     this.displayFaq();
   }
+
+  //get faq list
   displayFaq(){
     this.aboutService.getFaq().subscribe({
       next:(response) => {
@@ -40,6 +45,7 @@ export class AboutComponent implements OnInit {
     
   }
 
+  //expand collapse start here
   expandPanel(matExpansionPanel: MatExpansionPanel, event: any) {
     event.stopPropagation();
 
@@ -54,4 +60,5 @@ export class AboutComponent implements OnInit {
       target.classList && target.classList.contains(expansionIndicatorClass)
     );
   }
+  //expand collapse end here
 }

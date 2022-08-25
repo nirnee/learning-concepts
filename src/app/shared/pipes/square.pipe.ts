@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SquarePipe implements PipeTransform {
 
   transform(value: number, ...args: unknown[]): unknown {
-    return value*value;
+    return value*value; //return square of a number
   }
 
 }

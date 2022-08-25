@@ -10,6 +10,11 @@ import employees from '../data.json';
 })
 export class UpdatePostsComponent implements OnInit {
 
+  //define variables
+  routeSub: any;
+  empId: any;
+  validComment: boolean= true;
+
   //component to render update posts 
   constructor(
     private router: Router,
@@ -25,10 +30,6 @@ export class UpdatePostsComponent implements OnInit {
     content: new FormControl(''),
     author: new FormControl('', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(6)]))
   });
-
-  routeSub: any;
-  empId: any;
-  validComment: boolean= true;
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -59,8 +60,9 @@ export class UpdatePostsComponent implements OnInit {
           post.author = data.author.trim();
           post.content = data.content.trim();
           post.email = data.email.trim();
-          post.title = data.title.trim();          
-        }
+          post.title = data.title.trim();     
+          return;     
+        } 
       });      
       this.router.navigateByUrl('/posts');
     } else {

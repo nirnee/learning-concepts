@@ -9,19 +9,19 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   
+  //define variables
   date:Date = new Date(); 
+  user: any;
 
   constructor(private router: Router) { 
-     setInterval(() => {
+    //below code will display current time
+    setInterval(() => {
       this.date = new Date();
-    }, 1000)
-  }
-
-  user: any;
+    }, 1000);
+  } 
   
   ngOnInit(): void {
      let userData: any = localStorage.getItem("userData");
-     console.log(typeof(userData))
      this.user = JSON.parse(userData)?.['name'];
   }
 

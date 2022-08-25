@@ -3,12 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import employees from '../../../admin/posts/data.json';
 
+//render delete component
 @Component({
   selector: 'app-delete',
   templateUrl: './delete.component.html',
   styleUrls: ['./delete.component.scss']
 })
 export class DeleteComponent implements OnInit {
+  
+  //define variables
+  routeSub: any;
+  empId: any;
+  commentId: any;
+  title: string = '';
 
   constructor(
       private router: Router,
@@ -17,11 +24,6 @@ export class DeleteComponent implements OnInit {
     ) {
     //comment here
    }
-
-  routeSub: any;
-  empId: any;
-  commentId: any;
-  title: string = '';
   
   ngOnInit(): void {
      this.routeSub = this.route.params.subscribe(params => {
@@ -50,6 +52,7 @@ export class DeleteComponent implements OnInit {
          let result = [post.comments][0];
          arr = result.filter(post=>post.comId!=this.commentId);
          post.comments = arr;
+         return;
         }
       });
       this.router.navigateByUrl('/comments/:'+this.empId);

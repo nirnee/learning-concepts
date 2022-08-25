@@ -10,6 +10,13 @@ import employees from '../posts/data.json';
 })
 export class CommentsComponent implements OnInit {
 
+  //define variables
+  routeSub: any;
+  empId: any;
+  data: any;
+  comments: any;
+  noData: boolean = false;
+
   constructor( 
     private router: Router,
     private route: ActivatedRoute
@@ -17,11 +24,6 @@ export class CommentsComponent implements OnInit {
     //comment here
    }
 
-  routeSub: any;
-  empId: any;
-  data: any;
-  comments: any;
-  noData: boolean = false;
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
