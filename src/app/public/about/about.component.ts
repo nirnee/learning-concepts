@@ -33,6 +33,7 @@ export class AboutComponent implements OnInit {
       },
       error:(err) => {
         this.isLodaing = false;
+        this.message = 'something went wrong please try again later.';
         console.log(err);
       }
     });

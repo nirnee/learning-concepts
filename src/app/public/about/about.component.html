@@ -4,7 +4,7 @@
             <div class="container h-100">
                 <div class="menu">
                     <h2>FAQ</h2>
-                    <div class="d-flex py-4 row" *ngIf="!isLodaing">
+                    <div class="d-flex py-4 row" *ngIf="!isLodaing && faqs.length>0">
                         <div>
                             <button mat-button (click)="accordion.openAll()"
                                 class=" col-md-3 col-xl-3 col-lg-3 col-sm-3 float-start btn btn-success btn-block btn-lg gradient-custom-4 text-body">
